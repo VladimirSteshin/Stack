@@ -1,6 +1,5 @@
 class Stack:
-    def __init__(self, task):
-        self.task = task
+    def __init__(self):
         self.stack = []
 
     def is_empty(self):
