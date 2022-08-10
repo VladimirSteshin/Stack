@@ -1,14 +1,11 @@
 from stack import Stack
-from task import rows
 
-if __name__ == '__main__':
+
+def check_row(row):
+    good = True  # creating condition for the final check below
     brackets = Stack()
-    for row in rows:
-        brackets.stack = []  # cleaning stack
-        if row:
-            good = True  # creating condition for the final check below
-        else:
-            good = False
+    brackets.stack = []  # cleaning stack
+    if row and isinstance(row, str):
         for item in row:
             if item in '([{':  # finding left bracket
                 brackets.push(item)
@@ -34,3 +31,9 @@ if __name__ == '__main__':
             print('Balanced')
         else:
             print('Unbalanced')
+    else:
+        print('Unbalanced')
+
+
+if __name__ == '__main__':
+    check_row('')
