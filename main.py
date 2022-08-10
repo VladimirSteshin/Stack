@@ -5,7 +5,7 @@ def check_row(row):
     good = True  # creating condition for the final check below
     brackets = Stack()
     brackets.stack = []  # cleaning stack
-    if row and isinstance(row, str):
+    if row:
         for item in row:
             if item in '([{':  # finding left bracket
                 brackets.push(item)
@@ -28,12 +28,13 @@ def check_row(row):
                 good = False
                 break
         if good and brackets.size() == 0:  # if our condition status is 'good' and the stack is clean
-            print('Balanced')
+            return 'Balanced'
         else:
-            print('Unbalanced')
+            return 'Unbalanced'
     else:
-        print('Unbalanced')
+        return 'Unbalanced'
 
 
 if __name__ == '__main__':
-    check_row('')
+    print(check_row(''))
+
