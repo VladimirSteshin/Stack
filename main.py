@@ -4,7 +4,11 @@ from task import rows
 if __name__ == '__main__':
     brackets = Stack()
     for row in rows:
-        good = True
+        brackets.stack = []
+        if row:
+            good = True
+        else:
+            good = False
         for item in row:
             if item in '([{':
                 brackets.push(item)
